@@ -1,0 +1,21 @@
+{
+    "name": "SIAP Export",
+    "version": "17.0.1.0.0",
+    "category": "Accounting",
+    "summary": "Module for exporting data to SIAP, including top suppliers and customers.",
+    "description": "This module allows users to export accounts receivable and accounts payable data to SIAP in a specified TXT format. Users can choose to export the top 20 suppliers or customers, along with a date for the export.",
+    "author": "Your Company",
+    "website": "https://www.yourcompany.com",
+    "license": "LGPL-3",
+    "depends": ["base", "account"],
+    "data": [
+        "security/ir.model.access.csv",
+        "wizards/siap_export_wizard_views.xml",
+        "views/siap_export_views.xml",
+        "views/templates.xml",
+    ],
+    "assets": {},
+    "installable": True,
+    "application": False,
+    "auto_install": False,
+}
