@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- 
+        This file contains additional wizard configurations.
+        Main views are defined in views/siap_export_views.xml
+    -->
+    
+    <!-- Additional helper views if needed -->
+    
+</odoo>

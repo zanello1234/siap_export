@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_siap_export_wizard_user,siap.export.wizard.user,model_siap_export_wizard,account.group_account_user,1,1,1,1
+access_siap_export_wizard_manager,siap.export.wizard.manager,model_siap_export_wizard,account.group_account_manager,1,1,1,1
+access_siap_export_partner_line_user,siap.export.partner.line.user,model_siap_export_partner_line,account.group_account_user,1,1,1,1
+access_siap_export_partner_line_manager,siap.export.partner.line.manager,model_siap_export_partner_line,account.group_account_manager,1,1,1,1
+access_siap_export_model_user,siap.export.user,model_siap_export,account.group_account_user,1,1,1,0
+access_siap_export_model_manager,siap.export.manager,model_siap_export,account.group_account_manager,1,1,1,1

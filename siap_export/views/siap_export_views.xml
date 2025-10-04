@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Wizard View -->
+    <record id="view_siap_export_wizard" model="ir.ui.view">
+        <field name="name">siap.export.wizard.form</field>
+        <field name="model">siap.export.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Export to SIAP">
+                <div class="alert alert-info" role="alert">
+                    <p><strong>SIAP Export Tool</strong></p>
+                    <p>This tool exports the top 20 customers or suppliers to SIAP format for government compliance.</p>
+                </div>
+                <group>
+                    <group>
+                        <field name="export_type" required="1" widget="radio"/>
+                        <field name="export_date" required="1"/>
+                    </group>
+                    <group>
+                        <field name="format_type" required="1"/>
+                        <field name="company_id" options="{'no_create': True, 'no_open': True}"/>
+                    </group>
+                </group>
+                <footer>
+                    <button string="Preview Data" type="object" name="action_preview" 
+                            class="btn-primary" data-hotkey="p"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Dedicated List View for Partner Lines -->
+    <record id="view_siap_export_partner_line_list" model="ir.ui.view">
+        <field name="name">siap.export.partner.line.list</field>
+        <field name="model">siap.export.partner.line</field>
+        <field name="arch" type="xml">
+            <list create="false" delete="false">
+                <field name="sequence" string="#" width="50px"/>
+                <field name="partner_id" string="Partner"/>
+                <field name="vat" string="Tax ID"/>
+                <field name="partner_country_id" string="Country" optional="hide"/>
+                <field name="amount" sum="Total Amount" widget="monetary"/>
+                <field name="currency_id" invisible="1"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Preview Form View -->
+    <record id="view_siap_export_preview_form" model="ir.ui.view">
+        <field name="name">siap.export.preview.form</field>
+        <field name="model">siap.export.wizard</field>
+        <field name="arch" type="xml">
+            <form string="SIAP Export Preview">
+                <field name="export_type" invisible="1"/>
+                <field name="export_date" invisible="1"/>
+                <field name="format_type" invisible="1"/>
+                <field name="company_id" invisible="1"/>
+                
+                <div class="alert alert-success" role="alert">
+                    <h4>Preview: Top 20 <field name="export_type" readonly="1"/> as of <field name="export_date" readonly="1"/></h4>
+                    <p>Company: <field name="company_id" readonly="1"/></p>
+                    <p>Format: <field name="format_type" readonly="1"/></p>
+                </div>
+                
+                <field name="partner_preview_ids" readonly="1" widget="one2many" 
+                       options="{'no_create': True, 'no_edit': True}">
+                </field>
+                
+                <footer>
+                    <button string="Export to File" type="object" name="action_export" 
+                            class="btn-primary" data-hotkey="e"/>
+                    <button string="Back to Settings" type="object" name="action_back" 
+                            class="btn-secondary" data-hotkey="b"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action for the wizard -->
+    <record id="action_siap_export_wizard" model="ir.actions.act_window">
+        <field name="name">SIAP Export</field>
+        <field name="res_model">siap.export.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Generate SIAP Export for Government Compliance
+            </p>
+            <p>
+                Use this tool to export the top 20 customers or suppliers 
+                in SIAP format for government reporting requirements.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu Structure for Odoo 18 -->
+    <menuitem 
+        id="menu_siap_export_root" 
+        name="SIAP Exports" 
+        parent="account.menu_finance_reports" 
+        sequence="100"
+        groups="account.group_account_user"/>
+
+    <menuitem 
+        id="menu_siap_export_wizard" 
+        name="Export Top Partners" 
+        parent="menu_siap_export_root" 
+        action="action_siap_export_wizard" 
+        sequence="10"
+        groups="account.group_account_user"/>
+        
+    <!-- Additional menu for settings if needed -->
+    <menuitem 
+        id="menu_siap_export_config" 
+        name="Configuration" 
+        parent="menu_siap_export_root" 
+        sequence="90"
+        groups="account.group_account_manager"/>
+
+</odoo>
