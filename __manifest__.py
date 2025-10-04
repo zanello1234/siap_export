@@ -1,6 +1,6 @@
 {
     "name": "SIAP Export - Government Reporting",
-    "version": "17.0.1.0.0",
+    "version": "18.0.1.0.0",
     "category": "Accounting/Localizations",
     "summary": "Export supplier and customer data to SIAP (Sistema de Información de Administración Pública) format for government compliance in Latin America",
     "description": """
@@ -26,7 +26,7 @@ Perfect for:
 - Compliance with public administration requirements
 
 Technical Features:
-- Compatible with Odoo 17.0+
+- Compatible with Odoo 18.0+
 - Seamless integration with accounting module
 - Secure data export process
 - Customizable report parameters
