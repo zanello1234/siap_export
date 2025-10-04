@@ -1,0 +1,91 @@
+{
+    "marketplace": {
+        "name": "SIAP Export - Government Reporting",
+        "short_description": "Export supplier and customer data to SIAP format for government compliance",
+        "long_description": "Complete solution for exporting accounting data to SIAP (Sistema de Información de Administración Pública) format, designed specifically for government compliance requirements in Latin American countries.",
+        "category": "Accounting/Localizations",
+        "tags": [
+            "government",
+            "compliance", 
+            "reporting",
+            "export",
+            "siap",
+            "public-sector",
+            "latin-america",
+            "accounting",
+            "suppliers",
+            "customers"
+        ],
+        "target_audience": [
+            "Government Agencies",
+            "Public Sector Organizations", 
+            "Government Contractors",
+            "Municipal Offices",
+            "Compliance Officers"
+        ],
+        "key_features": [
+            "Export top 20 suppliers and customers",
+            "SIAP-compliant TXT format generation",
+            "Accounts receivable and payable reporting",
+            "User-friendly wizard interface",
+            "Automated data validation",
+            "Government compliance assurance"
+        ],
+        "benefits": [
+            "Streamline government reporting process",
+            "Ensure compliance with SIAP standards",
+            "Save time with automated exports",
+            "Reduce manual errors",
+            "Professional support available"
+        ],
+        "use_cases": [
+            "Government supplier reporting",
+            "Public sector compliance",
+            "Municipal financial reporting",
+            "State enterprise vendor management",
+            "Federal agency data submission"
+        ],
+        "technical_specs": {
+            "odoo_version": "17.0+",
+            "python_version": "3.8+",
+            "dependencies": ["base", "account"],
+            "database": "PostgreSQL",
+            "license": "LGPL-3"
+        },
+        "support": {
+            "email": "support@zanellodev.com",
+            "documentation": "Complete user manual included",
+            "community": "Active user community",
+            "professional_support": "Available for purchase"
+        },
+        "pricing": {
+            "model": "Free with paid support",
+            "base_price": 0.00,
+            "currency": "EUR",
+            "support_packages": "Available separately"
+        },
+        "images": {
+            "icon": "static/description/icon.png",
+            "banner": "static/description/banner.png", 
+            "screenshots": [
+                "static/description/screenshot_1.png",
+                "static/description/screenshot_2.png"
+            ]
+        },
+        "seo": {
+            "keywords": [
+                "SIAP export",
+                "government reporting",
+                "public administration", 
+                "compliance reporting",
+                "supplier export",
+                "customer export",
+                "accounting export",
+                "government compliance",
+                "public sector",
+                "latin america reporting"
+            ],
+            "meta_description": "Professional SIAP export tool for Odoo - automate government compliance reporting with top supplier and customer data exports in official TXT format."
+        }
+    }
+}

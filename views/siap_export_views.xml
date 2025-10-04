@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_siap_export_wizard" model="ir.ui.view">
+        <field name="name">siap.export.wizard.form</field>
+        <field name="model">siap.export.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Export to SIAP">
+                <group>
+                    <field name="export_type" required="1"/>
+                    <field name="export_date" required="1"/>
+                </group>
+                <footer>
+                    <button string="Preview" type="object" name="action_preview" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_siap_export_preview_form" model="ir.ui.view">
+        <field name="name">siap.export.preview.form</field>
+        <field name="model">siap.export.wizard</field>
+        <field name="arch" type="xml">
+            <form string="SIAP Export Preview">
+                <field name="export_type" invisible="1"/>
+                <field name="export_date" invisible="1"/>
+                <div>
+                    <h3>Preview of Top <field name="export_type" readonly="1"/> as of <field name="export_date" readonly="1"/></h3>
+                </div>
+                <field name="partner_preview_ids" readonly="1">
+                    <tree>
+                        <field name="sequence" widget="handle"/>
+                        <field name="partner_id"/>
+                        <field name="vat" string="Tax ID"/>
+                        <field name="amount" sum="Total"/>
+                        <field name="currency_id" invisible="1"/>
+                    </tree>
+                </field>
+                <footer>
+                    <button string="Export to TXT" type="object" name="action_export" class="btn-primary"/>
+                    <button string="Back" type="object" name="action_back_to_wizard" class="btn-secondary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_siap_export_wizard" model="ir.actions.act_window">
+        <field name="name">SIAP Export</field>
+        <field name="res_model">siap.export.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem 
+        id="menu_siap_export_root" 
+        name="SIAP Exports" 
+        parent="account.menu_finance_reports" 
+        sequence="100"/>
+
+    <menuitem 
+        id="menu_siap_export_wizard" 
+        name="Export Top Partners" 
+        parent="menu_siap_export_root" 
+        action="action_siap_export_wizard" 
+        sequence="10"/>
+</odoo>

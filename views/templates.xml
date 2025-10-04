@@ -1,0 +1,21 @@
+<odoo>
+    <template id="export_template">
+        <t t-call="web.html_container">
+            <div class="oe_structure"/>
+            <h1>SIAP Export</h1>
+            <p>Select the type of export you want to perform:</p>
+            <div>
+                <label for="export_type">Export Type:</label>
+                <select id="export_type" name="export_type">
+                    <option value="receivable">Accounts Receivable</option>
+                    <option value="payable">Accounts Payable</option>
+                </select>
+            </div>
+            <div>
+                <label for="export_date">Export Date:</label>
+                <input type="date" id="export_date" name="export_date"/>
+            </div>
+            <button type="button" id="export_button">Export</button>
+        </t>
+    </template>
+</odoo>
