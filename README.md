@@ -1,8 +1,8 @@
 # 🏛️ SIAP Export - Government Reporting Tool
 
-[![Odoo Version](https://img.shields.io/badge/Odoo-17.0-blue.svg)](https://github.com/odoo/odoo/tree/17.0)
+[![Odoo Version](https://img.shields.io/badge/Odoo-18.0-blue.svg)](https://github.com/odoo/odoo/tree/18.0)
 [![License: LGPL-3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
-[![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
+[![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 
 > **Complete solution for exporting accounting data to SIAP (Sistema de Información de Administración Pública) format, designed specifically for government compliance requirements in Latin American countries.**
 
@@ -105,8 +105,8 @@ SIAP Export is a comprehensive Odoo module that streamlines government reporting
 ## 🛠️ Technical Specifications
 
 ### System Requirements
-- **Odoo Version**: 17.0+
-- **Python**: 3.8+
+- **Odoo Version**: 18.0+
+- **Python**: 3.10+
 - **Database**: PostgreSQL
 - **Dependencies**: base, account modules
 
